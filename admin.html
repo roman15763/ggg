@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адмінська сторінка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h2>Список користувачів</h2>
+        <ul id="userList">
+            <li onclick="openUser('Рома', '1-кт-25')">Рома Ващук (Група: 1-кт-25)</li>
+            <li onclick="openUser('Слава', '1-кт-26')">Слава Ващук (Група: 1-кт-26)</li>
+        </ul>
+        
+        <div id="userModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2 id="modalUserName"></h2>
+                <p id="modalUserGroup"></p>
+                <p>Поінти: <span id="pointsDisplay">0</span></p>
+                <label for="pointsInput">Кількість поінтів:</label>
+                <input type="number" id="pointsInput" min="1" value="1">
+                <button onclick="updatePoints('add')">Додати поінти</button>
+                <button onclick="updatePoints('subtract')">Відняти поінти</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
